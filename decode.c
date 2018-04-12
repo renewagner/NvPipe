@@ -41,7 +41,11 @@
 #include <string.h>
 
 #include <cuda_runtime_api.h>
+#if CUDART_VERSION >= 9000
+#include <dynlink_nvcuvid.h>
+#else
 #include <nvcuvid.h>
+#endif
 #include <nvToolsExt.h>
 #include "config.nvp.h"
 #include "debug.h"
